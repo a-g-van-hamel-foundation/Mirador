@@ -1,0 +1,67 @@
+{
+	"name": "Mirador",
+	"version": "0.1",
+	"type": "parserhook",
+  "author": [
+    "[https://projectmirador.org Creators of Mirador]",
+		"[https://codecs.vanhamel.nl Dennis Groenewegen]"
+	],
+  "url": "https://codecs.vanhamel.nl/Show:IIIF",
+  "description": "Implements Mirador 3, a multi-window image viewing platform based largely on IIIF, with the ability to zoom, display, compare and annotate images from around the world",
+  "license-name": "GPL-2.0-or-later",
+  "requires": {
+		"MediaWiki": ">= 1.31.0",
+		"extensions": {
+		}
+	},
+  "MessagesDirs": {
+	    "Mirador": [
+	      "i18n"
+	    ]
+	  },
+	"ExtensionMessagesFiles": {
+			"mrdrMagic": "mirador.i18n.php"
+		},
+  "AutoloadNamespaces": {
+      "mrdr\\": "src/"
+    },
+  "AutoloadClasses": {
+  	"mrdrHooks": "src/mrdrHooks.php",
+    "mrdrPF": "src/mrdrPF.php"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": [
+      "mrdrHooks::onParserFirstCallInit"
+    	],
+    "BeforePageDisplay": [
+  		"mrdrHooks::onBeforePageDisplay"
+  	 ]
+  },
+  "ResourceModules": {
+
+		"ext.mirador.core": {
+			"localBasePath": "modules",
+			"remoteExtPath": "Mirador/modules",
+      "packageFiles": [
+				"ext.mirador.js"
+      ],
+      "styles": [
+				"ext.mirador.less"
+			],
+			"dependencies":[
+				"ext.mirador.lib"
+			]
+    },
+		"ext.mirador.lib": {
+			"localBasePath": "modules",
+			"remoteExtPath": "Mirador/modules",
+			"packageFiles": [
+				"lib-es5/main.js"
+      ]
+		}
+
+
+  },
+  "manifest_version": 2,
+  "load_composer_autoloader": false
+}
