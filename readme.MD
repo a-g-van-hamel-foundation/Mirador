@@ -1,18 +1,17 @@
 # Mirador extension for MediaWiki
 
-This is an extension to (https://mediawiki.org)[MediaWiki] which implements a build of (https://projectmirador.org/)[Mirador 3], including four plugins, for use in wikis. Mirador is an image viewer which lets you bring in, view, zoom in on, leaf through and compare (https://iiif.io/)[IIIF resources] from institutions and repositories all across the world. A parser function (`#mirador`) lets users configure and load an instance of Mirador.
+This is an extension to [MediaWiki](https://mediawiki.org) which implements a build of [Mirador 3](https://projectmirador.org/), including four plugins, for use in wikis. Mirador is an image viewer which lets you bring in, view, zoom in on, leaf through and compare [IIIF resources](https://iiif.io/) from institutions and repositories all across the world. A parser function (`#mirador`) lets users configure and load an instance of Mirador.
 
 ## Demo
-An example of the extension in action can be (https://codecs.vanhamel.nl/Show:IIIF/Mirador?&manifest=https://damsssl.llgc.org.uk/iiif/2.0/4623419/manifest.json&canvas=https://damsssl.llgc.org.uk/iiif/2.0/4623419/canvas/4623439.json)[seen on the CODECS website].
+An example of the extension in action can be [seen on the CODECS website](https://codecs.vanhamel.nl/Show:IIIF/Mirador?&manifest=https://damsssl.llgc.org.uk/iiif/2.0/4623419/manifest.json&canvas=https://damsssl.llgc.org.uk/iiif/2.0/4623419/canvas/4623439.json).
 
-[Screenshot](/modules/assets/Mirador-extension-screenshot-BBC.png)
+![Screenshot](/modules/assets/Mirador-extension-screenshot-BBC.png)
 
 ## Usage
 Here is example of a straightforward setup with just the manifest and all of the options set to their default values:
 
 ```
-{{#mirador:manifest=https://www.loc.gov/item/2004553940/manifest.json
-}}
+{{#mirador:manifest=https://www.loc.gov/item/2004553940/manifest.json }}
 ```
 
 ### Options
@@ -32,7 +31,7 @@ The parser function offers a select set of configuration options:
 ```
 
 ### Share a link with a specific manifest and canvas
-The CanvasLink plugin lets you share a link to your Mirador-using wiki page with the currently selected canvas. When the shared link is followed, the relevant manifest and canvas appended to the URL will be automatically picked up by the viewer.
+The CanvasLink plugin lets you share a link to your Mirador-using wiki page with the currently selected canvas. The share icon is found in the top right menu. When the shared link is followed, the relevant manifest and canvas appended to the URL will be automatically picked up by the viewer.
 
 ```
 {{#mirador:manifest=...
@@ -45,7 +44,7 @@ The CanvasLink plugin lets you share a link to your Mirador-using wiki page with
 It is entirely up to you whether the link should point to the current page (hence the use of `{{FULLPAGENAME}}` in this example), or perhaps to some other dedicated page with the Mirador viewer.
 
 ## Version history
-- 0.1 - Beta release. Mirador 3.3.0, with four plugins: Image Tools (developed by the Mirador Project) and Image Cropper, CanvasLink and Text Overlay (developed by Bavarian State Library).
+- 0.1 - Beta release. Mirador 3.3.0, with four plugins: [Image Tools](https://github.com/ProjectMirador/mirador-image-tools) (developed by the Mirador Project) and [Image Cropper](https://github.com/dbmdz/mirador-imagecropper), [CanvasLink](https://github.com/dbmdz/mirador-canvaslink) and [Text Overlay](https://github.com/dbmdz/mirador-textoverlay) (developed by the Bayerische Staatsbibliothek/Bavarian State Library).
 
 ## Known limitations
 - You can use the parser function only once on a single page.
