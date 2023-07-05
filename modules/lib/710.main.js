@@ -1,10 +1,10 @@
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-(self.webpackChunkmirador_integration_oct2022 = self.webpackChunkmirador_integration_oct2022 || []).push([[710], {
+(self.webpackChunkmirador_integration_codecs = self.webpackChunkmirador_integration_codecs || []).push([[710], {
   74693: function _(e, t, n) {
-    var o = n(95318),
-      r = n(20862);
+    var o = n(64836),
+      r = n(75263);
     t.Z = void 0;
     var i = r(n(67294)),
       c = (0, o(n(2108))["default"])(i.createElement("path", {
@@ -15,7 +15,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   46710: function _(e, t, n) {
     n.r(t), n.d(t, {
       "default": function _default() {
-        return z;
+        return C;
       }
     });
     var o = n(97779),
@@ -37,25 +37,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     }
     function m(e, t) {
-      return (m = Object.setPrototypeOf || function (e, t) {
+      return m = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, m(e, t);
     }
-    function y(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return w(e);
-    }
-    function w(e) {
+    function y(e) {
       if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return e;
     }
-    function b(e) {
-      return (b = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function w(e) {
+      return w = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, w(e);
     }
-    var g = function (e) {
+    var b = function (e) {
       !function (e, t) {
         if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
         e.prototype = Object.create(t && t.prototype, {
@@ -81,18 +76,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var e,
-            t = b(o);
+            t = w(o);
           if (r) {
-            var n = b(this).constructor;
+            var n = w(this).constructor;
             e = Reflect.construct(t, arguments, n);
           } else e = t.apply(this, arguments);
-          return y(this, e);
+          return function (e, t) {
+            if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+            return y(e);
+          }(this, e);
         });
       function c(e) {
         var t;
         return function (e, t) {
           if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-        }(this, c), (t = i.call(this, e)).openCollectionDialog = t.openCollectionDialog.bind(w(t)), t;
+        }(this, c), (t = i.call(this, e)).openCollectionDialog = t.openCollectionDialog.bind(y(t)), t;
       }
       return t = c, (n = [{
         key: "openCollectionDialog",
@@ -128,16 +127,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
       }]) && d(t.prototype, n), c;
     }(f.Component);
-    g.defaultProps = {
+    b.defaultProps = {
       collectionPath: [],
       manifestId: null,
       t: function t() {},
       windowId: null
     };
-    var C = {
+    var g = {
       showCollectionDialog: l.FK
     };
-    var z = (0, o.qC)((0, i.Z)(), (0, c.Z)(function (e) {
+    var C = (0, o.qC)((0, i.Z)(), (0, c.Z)(function (e) {
       return {};
     }), (0, r.$j)(function (e, t) {
       var n = t.windowId,
@@ -148,6 +147,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         collectionPath: o.collectionPath,
         manifestId: o.manifestId
       };
-    }, C), (0, a.A)("SelectCollection"))(g);
+    }, g), (0, a.A)("SelectCollection"))(b);
   }
 }]);

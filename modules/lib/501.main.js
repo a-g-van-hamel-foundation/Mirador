@@ -1,7 +1,7 @@
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-(self.webpackChunkmirador_integration_oct2022 = self.webpackChunkmirador_integration_oct2022 || []).push([[501], {
+(self.webpackChunkmirador_integration_codecs = self.webpackChunkmirador_integration_codecs || []).push([[501], {
   69199: function _(t, e, n) {
     var o = n(89881),
       r = n(98612);
@@ -48,9 +48,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   71131: function _(t) {
     t.exports = function (t, e) {
       var n = t.length;
-      for (t.sort(e); n--;) {
-        t[n] = t[n].value;
-      }
+      for (t.sort(e); n--;) t[n] = t[n].value;
       return t;
     };
   },
@@ -61,11 +59,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     t.exports = function (t, e, n) {
       var a = t.length;
       if (a < 2) return a ? i(t[0]) : [];
-      for (var s = -1, c = Array(a); ++s < a;) {
-        for (var l = t[s], u = -1; ++u < a;) {
-          u != s && (c[s] = o(c[s] || l, t[u], e, n));
-        }
-      }
+      for (var s = -1, c = Array(a); ++s < a;) for (var l = t[s], u = -1; ++u < a;) u != s && (c[s] = o(c[s] || l, t[u], e, n));
       return i(r(c, 1), e, n);
     };
   },
@@ -135,7 +129,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
     n.r(e), n.d(e, {
       "default": function _default() {
-        return yt;
+        return pt;
       }
     });
     var o = n(97779),
@@ -237,9 +231,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
     function P(t, e) {
       (null == e || e > t.length) && (e = t.length);
-      for (var n = 0, o = new Array(e); n < e; n++) {
-        o[n] = t[n];
-      }
+      for (var n = 0, o = new Array(e); n < e; n++) o[n] = t[n];
       return o;
     }
     function S(t, e) {
@@ -363,9 +355,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             a = !0,
             s = !1;
           try {
-            for (n = n.call(t); !(a = (o = n.next()).done) && (i.push(o.value), !e || i.length !== e); a = !0) {
-              ;
-            }
+            for (n = n.call(t); !(a = (o = n.next()).done) && (i.push(o.value), !e || i.length !== e); a = !0);
           } catch (t) {
             s = !0, r = t;
           } finally {
@@ -390,9 +380,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
     function z(t, e) {
       (null == e || e > t.length) && (e = t.length);
-      for (var n = 0, o = new Array(e); n < e; n++) {
-        o[n] = t[n];
-      }
+      for (var n = 0, o = new Array(e); n < e; n++) o[n] = t[n];
       return o;
     }
     function V(t, e) {
@@ -402,25 +390,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     }
     function U(t, e) {
-      return (U = Object.setPrototypeOf || function (t, e) {
+      return U = Object.setPrototypeOf || function (t, e) {
         return t.__proto__ = e, t;
-      })(t, e);
+      }, U(t, e);
     }
-    function _(t, e) {
-      if (e && ("object" == _typeof(e) || "function" == typeof e)) return e;
-      if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
-      return B(t);
-    }
-    function B(t) {
+    function _(t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
     }
-    function F(t) {
-      return (F = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+    function B(t) {
+      return B = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
         return t.__proto__ || Object.getPrototypeOf(t);
-      })(t);
+      }, B(t);
     }
-    var Z = function (t) {
+    var F = function (t) {
       !function (t, e) {
         if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
         t.prototype = Object.create(e && e.prototype, {
@@ -447,33 +430,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var t,
-            e = F(r);
+            e = B(r);
           if (i) {
-            var n = F(this).constructor;
+            var n = B(this).constructor;
             t = Reflect.construct(e, arguments, n);
           } else t = e.apply(this, arguments);
-          return _(this, t);
+          return function (t, e) {
+            if (e && ("object" == _typeof(e) || "function" == typeof e)) return e;
+            if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+            return _(t);
+          }(this, t);
         });
       function s(t) {
         var e;
         return function (t, e) {
           if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-        }(this, s), (e = a.call(this, t)).ref = u.createRef(), e.osdCanvasOverlay = null, e.updateCanvas = function () {}, e.onUpdateViewport = e.onUpdateViewport.bind(B(e)), e.onCanvasClick = e.onCanvasClick.bind(B(e)), e.onCanvasMouseMove = f()(e.onCanvasMouseMove.bind(B(e)), 10), e.onCanvasExit = e.onCanvasExit.bind(B(e)), e;
+        }(this, s), (e = a.call(this, t)).ref = u.createRef(), e.osdCanvasOverlay = null, e.updateCanvas = function () {}, e.onUpdateViewport = e.onUpdateViewport.bind(_(e)), e.onCanvasClick = e.onCanvasClick.bind(_(e)), e.onCanvasMouseMove = f()(e.onCanvasMouseMove.bind(_(e)), 10), e.onCanvasExit = e.onCanvasExit.bind(_(e)), e;
       }
-      return e = s, o = [{
-        key: "annotationsMatch",
-        value: function value(t, e) {
-          return !t && !e || !(t && !e || !t && e) && (0 === t.length && 0 === e.length || t.length === e.length && t.every(function (t, n) {
-            var o = t.resources.map(function (t) {
-                return t.id;
-              }),
-              r = e[n].resources.map(function (t) {
-                return t.id;
-              });
-            return 0 === o.length && 0 === r.length || o.length === r.length && !(t.id !== e[n].id || !v()(o, r));
-          }));
-        }
-      }], (n = [{
+      return e = s, n = [{
         key: "componentDidMount",
         value: function value() {
           this.initializeViewer();
@@ -538,9 +512,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
                 },
                 d = [],
                 f = 1;
-              for (d = O()(l.map(u(f)), "score"); f < Math.max(s, c) && d[0].score === d[1].score;) {
-                f *= 2, d = O()(l.map(u(f)), "score");
-              }
+              for (d = O()(l.map(u(f)), "score"); f < Math.max(s, c) && d[0].score === d[1].score;) f *= 2, d = O()(l.map(u(f)), "score");
               this.toggleAnnotation(d[0].anno.id);
             }
           }
@@ -702,9 +674,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             }
           }, u.createElement("canvas", null)), t.canvas) : u.createElement(u.Fragment, null);
         }
-      }]) && V(e.prototype, n), o && V(e, o), s;
+      }], o = [{
+        key: "annotationsMatch",
+        value: function value(t, e) {
+          return !t && !e || !(t && !e || !t && e) && (0 === t.length && 0 === e.length || t.length === e.length && t.every(function (t, n) {
+            var o = t.resources.map(function (t) {
+                return t.id;
+              }),
+              r = e[n].resources.map(function (t) {
+                return t.id;
+              });
+            return 0 === o.length && 0 === r.length || o.length === r.length && !(t.id !== e[n].id || !v()(o, r));
+          }));
+        }
+      }], n && V(e.prototype, n), o && V(e, o), s;
     }(u.Component);
-    Z.defaultProps = {
+    F.defaultProps = {
       annotations: [],
       deselectAnnotation: function deselectAnnotation() {},
       drawAnnotations: !0,
@@ -718,52 +703,52 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       selectedAnnotationId: void 0,
       viewer: null
     };
-    var N = n(73953),
-      $ = n(32012),
-      J = n(42383),
-      X = n(1172),
-      q = n(80923),
-      Y = n(81610),
-      G = n(51580),
-      L = {
-        deselectAnnotation: N.D6,
-        hoverAnnotation: N.G3,
-        selectAnnotation: N.XD
+    var Z = n(73953),
+      N = n(32012),
+      $ = n(42383),
+      J = n(1172),
+      X = n(80923),
+      q = n(81610),
+      Y = n(51580),
+      G = {
+        deselectAnnotation: Z.D6,
+        hoverAnnotation: Z.G3,
+        selectAnnotation: Z.XD
       };
-    var K = (0, o.qC)((0, i.Z)(), (0, r.$j)(function (t, e) {
+    var L = (0, o.qC)((0, i.Z)(), (0, r.$j)(function (t, e) {
       var n = e.windowId;
       return {
-        annotations: (0, $.A7)(t, {
+        annotations: (0, N.A7)(t, {
           windowId: n
         }),
-        canvasWorld: (0, J.B)(t, {
+        canvasWorld: (0, $.B)(t, {
           windowId: n
         }),
-        drawAnnotations: (0, X.iE)(t).window.forceDrawAnnotations || (0, q.ig)(t, {
+        drawAnnotations: (0, J.iE)(t).window.forceDrawAnnotations || (0, X.ig)(t, {
           content: "annotations",
           windowId: n
         }).length > 0,
-        drawSearchAnnotations: (0, X.iE)(t).window.forceDrawAnnotations || (0, q.ig)(t, {
+        drawSearchAnnotations: (0, J.iE)(t).window.forceDrawAnnotations || (0, X.ig)(t, {
           content: "search",
           windowId: n
         }).length > 0,
-        highlightAllAnnotations: (0, Y.Jj)(t, {
+        highlightAllAnnotations: (0, q.Jj)(t, {
           windowId: n
         }).highlightAllAnnotations,
-        hoveredAnnotationIds: (0, Y.Jj)(t, {
+        hoveredAnnotationIds: (0, q.Jj)(t, {
           windowId: n
         }).hoveredAnnotationIds,
-        palette: (0, X.gh)(t).palette,
-        searchAnnotations: (0, G.kM)(t, {
+        palette: (0, J.gh)(t).palette,
+        searchAnnotations: (0, Y.kM)(t, {
           windowId: n
         }),
-        selectedAnnotationId: (0, $.EO)(t, {
+        selectedAnnotationId: (0, N.EO)(t, {
           windowId: n
         })
       };
-    }, L), (0, l.A)("AnnotationsOverlay"))(Z);
-    var Q = n(95450),
-      tt = {
+    }, G), (0, l.A)("AnnotationsOverlay"))(F);
+    var K = n(95450),
+      Q = {
         get: function get(t) {
           return this.refs[t];
         },
@@ -772,37 +757,35 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           this.refs[t] = e;
         }
       };
-    function et(t, e, n) {
-      return (et = dt() ? Reflect.construct : function (t, e, n) {
+    function tt(t, e, n) {
+      return tt = lt() ? Reflect.construct : function (t, e, n) {
         var o = [null];
         o.push.apply(o, e);
         var r = new (Function.bind.apply(t, o))();
-        return n && ct(r, n.prototype), r;
-      }).apply(null, arguments);
+        return n && st(r, n.prototype), r;
+      }, tt.apply(null, arguments);
     }
-    function nt(t) {
+    function et(t) {
       return function (t) {
-        if (Array.isArray(t)) return ot(t);
+        if (Array.isArray(t)) return nt(t);
       }(t) || function (t) {
         if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t);
       }(t) || function (t, e) {
         if (t) {
-          if ("string" == typeof t) return ot(t, e);
+          if ("string" == typeof t) return nt(t, e);
           var n = Object.prototype.toString.call(t).slice(8, -1);
-          return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? ot(t, e) : void 0;
+          return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? nt(t, e) : void 0;
         }
       }(t) || function () {
         throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }();
     }
-    function ot(t, e) {
+    function nt(t, e) {
       (null == e || e > t.length) && (e = t.length);
-      for (var n = 0, o = new Array(e); n < e; n++) {
-        o[n] = t[n];
-      }
+      for (var n = 0, o = new Array(e); n < e; n++) o[n] = t[n];
       return o;
     }
-    function rt(t, e) {
+    function ot(t, e) {
       var n = Object.keys(t);
       if (Object.getOwnPropertySymbols) {
         var o = Object.getOwnPropertySymbols(t);
@@ -812,18 +795,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
       return n;
     }
-    function it(t) {
+    function rt(t) {
       for (var e = 1; e < arguments.length; e++) {
         var n = null != arguments[e] ? arguments[e] : {};
-        e % 2 ? rt(Object(n), !0).forEach(function (e) {
-          at(t, e, n[e]);
-        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : rt(Object(n)).forEach(function (e) {
+        e % 2 ? ot(Object(n), !0).forEach(function (e) {
+          it(t, e, n[e]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : ot(Object(n)).forEach(function (e) {
           Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
         });
       }
       return t;
     }
-    function at(t, e, n) {
+    function it(t, e, n) {
       return e in t ? Object.defineProperty(t, e, {
         value: n,
         enumerable: !0,
@@ -831,27 +814,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         writable: !0
       }) : t[e] = n, t;
     }
-    function st(t, e) {
+    function at(t, e) {
       for (var n = 0; n < e.length; n++) {
         var o = e[n];
         o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
       }
     }
-    function ct(t, e) {
-      return (ct = Object.setPrototypeOf || function (t, e) {
+    function st(t, e) {
+      return st = Object.setPrototypeOf || function (t, e) {
         return t.__proto__ = e, t;
-      })(t, e);
+      }, st(t, e);
     }
-    function lt(t, e) {
-      if (e && ("object" == _typeof(e) || "function" == typeof e)) return e;
-      if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
-      return ut(t);
-    }
-    function ut(t) {
+    function ct(t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
     }
-    function dt() {
+    function lt() {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" == typeof Proxy) return !0;
@@ -861,12 +839,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         return !1;
       }
     }
-    function ft(t) {
-      return (ft = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+    function ut(t) {
+      return ut = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
         return t.__proto__ || Object.getPrototypeOf(t);
-      })(t);
+      }, ut(t);
     }
-    var ht = function (t) {
+    var dt = function (t) {
       !function (t, e) {
         if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
         t.prototype = Object.create(e && e.prototype, {
@@ -875,20 +853,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             writable: !0,
             configurable: !0
           }
-        }), e && ct(t, e);
+        }), e && st(t, e);
       }(a, t);
       var e,
         n,
         o,
         r,
-        i = (e = a, n = dt(), function () {
+        i = (o = a, r = lt(), function () {
           var t,
-            o = ft(e);
-          if (n) {
-            var r = ft(this).constructor;
-            t = Reflect.construct(o, arguments, r);
-          } else t = o.apply(this, arguments);
-          return lt(this, t);
+            e = ut(o);
+          if (r) {
+            var n = ut(this).constructor;
+            t = Reflect.construct(e, arguments, n);
+          } else t = e.apply(this, arguments);
+          return function (t, e) {
+            if (e && ("object" == _typeof(e) || "function" == typeof e)) return e;
+            if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+            return ct(t);
+          }(this, t);
         });
       function a(t) {
         var e;
@@ -896,9 +878,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
         }(this, a), (e = i.call(this, t)).state = {
           viewer: void 0
-        }, e.ref = u.createRef(), e.apiRef = u.createRef(), tt.set(t.windowId, e.apiRef), e.onCanvasMouseMove = f()(e.onCanvasMouseMove.bind(ut(e)), 10), e.onViewportChange = e.onViewportChange.bind(ut(e)), e.zoomToWorld = e.zoomToWorld.bind(ut(e)), e.osdUpdating = !1, e;
+        }, e.ref = u.createRef(), e.apiRef = u.createRef(), Q.set(t.windowId, e.apiRef), e.onCanvasMouseMove = f()(e.onCanvasMouseMove.bind(ct(e)), 10), e.onViewportChange = e.onViewportChange.bind(ct(e)), e.zoomToWorld = e.zoomToWorld.bind(ct(e)), e.osdUpdating = !1, e;
       }
-      return o = a, (r = [{
+      return e = a, n = [{
         key: "componentDidMount",
         value: function value() {
           var t = this,
@@ -907,7 +889,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             o = e.t,
             r = e.windowId;
           if (this.ref.current) {
-            var i = new (g())(it({
+            var i = new (g())(rt({
                 id: this.ref.current.id
               }, n)),
               a = i.canvas && i.canvas.firstElementChild;
@@ -995,7 +977,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               error: function error(t) {
                 return r(t);
               },
-              fitBounds: et(g().Rect, nt(e.contentResourceToWorldCoordinates(t))),
+              fitBounds: tt(g().Rect, et(e.contentResourceToWorldCoordinates(t))),
               index: e.layerIndexOfImageResource(t),
               opacity: e.layerOpacityOfImageResource(t),
               success: function success(t) {
@@ -1012,13 +994,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             n = this.state.viewer;
           return new Promise(function (o, r) {
             n || r();
-            var i = it({}, t.json),
+            var i = rt({}, t.json),
               a = e.contentResource(t.id);
             a && n.addTiledImage({
               error: function error(t) {
                 return r(t);
               },
-              fitBounds: et(g().Rect, nt(e.contentResourceToWorldCoordinates(a))),
+              fitBounds: tt(g().Rect, et(e.contentResourceToWorldCoordinates(a))),
               index: e.layerIndexOfImageResource(a),
               opacity: e.layerOpacityOfImageResource(a),
               success: function success(t) {
@@ -1031,9 +1013,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }, {
         key: "refreshTileProperties",
         value: function value() {
-          for (var t = this.props.canvasWorld, e = this.state.viewer.world, n = [], o = 0; o < e.getItemCount(); o += 1) {
-            n.push(e.getItemAt(o));
-          }
+          for (var t = this.props.canvasWorld, e = this.state.viewer.world, n = [], o = 0; o < e.getItemCount(); o += 1) n.push(e.getItemAt(o));
           n.forEach(function (n, o) {
             var r = t.contentResource(n.source["@id"] || n.source.id);
             if (r) {
@@ -1045,9 +1025,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }, {
         key: "fitBounds",
         value: function value(t, e, n, o) {
-          var r = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4],
-            i = this.state.viewer;
-          i.viewport.fitBounds(new (g().Rect)(t, e, n, o), r);
+          var r = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4];
+          this.state.viewer.viewport.fitBounds(new (g().Rect)(t, e, n, o), r);
         }
       }, {
         key: "infoResponsesMatch",
@@ -1070,7 +1049,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         value: function value() {
           var t = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0],
             e = this.props.canvasWorld;
-          this.fitBounds.apply(this, nt(e.worldBounds()).concat([t]));
+          this.fitBounds.apply(this, et(e.worldBounds()).concat([t]));
         }
       }, {
         key: "render",
@@ -1097,18 +1076,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               label: r
             }),
             "aria-live": "polite"
-          }, s && u.createElement(K, {
+          }, s && u.createElement(L, {
             viewer: c,
             windowId: a
-          }), l, u.createElement(Q.M, Object.assign({
+          }), l, u.createElement(K.M, Object.assign({
             viewer: c
-          }, it(it({}, this.props), {}, {
+          }, rt(rt({}, this.props), {}, {
             children: null
           })))));
         }
-      }]) && st(o.prototype, r), a;
+      }], n && at(e.prototype, n), a;
     }(u.Component);
-    ht.defaultProps = {
+    dt.defaultProps = {
       children: null,
       drawAnnotations: !1,
       infoResponses: [],
@@ -1117,31 +1096,31 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       osdConfig: {},
       viewerConfig: null
     };
-    var vt = n(36691),
-      pt = n(49455),
-      gt = {
-        updateViewport: vt.WH
+    var ft = n(36691),
+      ht = n(49455),
+      vt = {
+        updateViewport: ft.WH
       };
-    var yt = (0, o.qC)((0, a.Z)({
+    var pt = (0, o.qC)((0, a.Z)({
       osdContainer: {
         flex: 1,
         position: "relative"
       }
     }), (0, i.Z)(), (0, r.$j)(function (t, e) {
       var n = e.windowId,
-        o = (0, J.B)(t, {
+        o = (0, $.B)(t, {
           windowId: n
         }),
-        r = (0, pt.k5)(t),
+        r = (0, ht.k5)(t),
         i = c()(o.canvases.map(function (t) {
           return t.imageServiceIds;
         }));
       return {
         canvasWorld: o,
-        drawAnnotations: (0, X.iE)(t).window.forceDrawAnnotations || (0, q.ig)(t, {
+        drawAnnotations: (0, J.iE)(t).window.forceDrawAnnotations || (0, X.ig)(t, {
           content: "annotations",
           windowId: n
-        }).length > 0 || (0, q.ig)(t, {
+        }).length > 0 || (0, X.ig)(t, {
           content: "search",
           windowId: n
         }).length > 0,
@@ -1150,20 +1129,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }).filter(function (t) {
           return void 0 !== t && !1 === t.isFetching && void 0 === t.error;
         }),
-        label: (0, pt.vt)(t, {
-          canvasId: ((0, pt.Pm)(t, {
+        label: (0, ht.vt)(t, {
+          canvasId: ((0, ht.Pm)(t, {
             windowId: n
           }) || {}).id,
           windowId: n
         }),
-        nonTiledImages: (0, pt.Fg)(t, {
+        nonTiledImages: (0, ht.Fg)(t, {
           windowId: n
         }),
-        osdConfig: (0, X.iE)(t).osdConfig,
-        viewerConfig: (0, Y.gA)(t, {
+        osdConfig: (0, J.iE)(t).osdConfig,
+        viewerConfig: (0, q.gA)(t, {
           windowId: n
         })
       };
-    }, gt), (0, l.A)("OpenSeadragonViewer"))(ht);
+    }, vt), (0, l.A)("OpenSeadragonViewer"))(dt);
   }
 }]);

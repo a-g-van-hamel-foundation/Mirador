@@ -6,5 +6,5 @@
   },
   "mirador-extensionname": "Mirador",
   "mirador": "Mirador",
-  "ceteicean-desc": "..."
+  "mirador-desc": "Implements Mirador 3, a multi-window image viewing platform based largely on IIIF, with the ability to zoom, display, compare and annotate images from around the world."
 }

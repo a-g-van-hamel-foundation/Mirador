@@ -44,6 +44,7 @@ The CanvasLink plugin lets you share a link to your Mirador-using wiki page with
 It is entirely up to you whether the link should point to the current page (hence the use of `{{FULLPAGENAME}}` in this example), or perhaps to some other dedicated page with the Mirador viewer.
 
 ## Version history
+- 0.2 - Upgraded build. Added check for both loading and DOMContentLoad events to address occasional TypeError issue (e.g. `rc is not defined`). Fixed issue with spaces in URLs.
 - 0.1 - Beta release. Mirador 3.3.0, with four plugins: [Image Tools](https://github.com/ProjectMirador/mirador-image-tools) (developed by the Mirador Project) and [Image Cropper](https://github.com/dbmdz/mirador-imagecropper), [CanvasLink](https://github.com/dbmdz/mirador-canvaslink) and [Text Overlay](https://github.com/dbmdz/mirador-textoverlay) (developed by the Bayerische Staatsbibliothek/Bavarian State Library).
 
 ## Known limitations

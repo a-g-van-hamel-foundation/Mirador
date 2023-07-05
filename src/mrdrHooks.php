@@ -1,15 +1,15 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
-//use MediaWiki\ExtensionRegistry;
 use MediaWiki\OutputPage;
-//use MediaWiki\Parser;
 use MediaWiki\ParserOutput;
 use MediaWiki\PPFrame;
 
 class mrdrHooks {
 
-  /* Register hook for #cetei parser function */
+  /**
+   * Register hook for #mirador parser function
+   */
   public static function onParserFirstCallInit( Parser $parser ) {
 
     // Parser function #mirador:

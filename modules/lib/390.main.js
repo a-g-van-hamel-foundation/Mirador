@@ -1,10 +1,10 @@
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-(self.webpackChunkmirador_integration_oct2022 = self.webpackChunkmirador_integration_oct2022 || []).push([[390], {
+(self.webpackChunkmirador_integration_codecs = self.webpackChunkmirador_integration_codecs || []).push([[390], {
   77206: function _(e, t, n) {
-    var r = n(95318),
-      o = n(20862);
+    var r = n(64836),
+      o = n(75263);
     t.Z = void 0;
     var a = o(n(67294)),
       i = (0, r(n(2108))["default"])(a.createElement("path", {
@@ -13,8 +13,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     t.Z = i;
   },
   99049: function _(e, t, n) {
-    var r = n(95318),
-      o = n(20862);
+    var r = n(64836),
+      o = n(75263);
     t.Z = void 0;
     var a = o(n(67294)),
       i = (0, r(n(2108))["default"])(a.createElement("path", {
@@ -23,8 +23,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     t.Z = i;
   },
   59169: function _(e, t, n) {
-    var r = n(95318),
-      o = n(20862);
+    var r = n(64836),
+      o = n(75263);
     t.Z = void 0;
     var a = o(n(67294)),
       i = (0, r(n(2108))["default"])(a.createElement("path", {
@@ -35,14 +35,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   5390: function _(e, t, n) {
     n.r(t), n.d(t, {
       "default": function _default() {
-        return le;
+        return te;
       }
     });
     var r = n(97779),
       o = n(11196),
       a = n(67294),
       i = n(28216),
-      c = n(8935),
+      c = n(13124),
       u = n(52543),
       l = n(59114),
       s = n(81610),
@@ -76,25 +76,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     }
     function Z(e, t) {
-      return (Z = Object.setPrototypeOf || function (e, t) {
+      return Z = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, Z(e, t);
     }
-    function _(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return j(e);
-    }
-    function j(e) {
+    function _(e) {
       if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return e;
     }
-    function k(e) {
-      return (k = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function j(e) {
+      return j = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, j(e);
     }
-    var P = function (e) {
+    var k = function (e) {
       !function (e, t) {
         if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
         e.prototype = Object.create(t && t.prototype, {
@@ -120,18 +115,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var e,
-            t = k(r);
+            t = j(r);
           if (o) {
-            var n = k(this).constructor;
+            var n = j(this).constructor;
             e = Reflect.construct(t, arguments, n);
           } else e = t.apply(this, arguments);
-          return _(this, e);
+          return function (e, t) {
+            if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+            return _(e);
+          }(this, e);
         });
       function c(e) {
         var t;
         return function (e, t) {
           if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-        }(this, c), (t = i.call(this, e)).handleZoomInClick = t.handleZoomInClick.bind(j(t)), t.handleZoomOutClick = t.handleZoomOutClick.bind(j(t)), t;
+        }(this, c), (t = i.call(this, e)).handleZoomInClick = t.handleZoomInClick.bind(_(t)), t.handleZoomOutClick = t.handleZoomOutClick.bind(_(t)), t;
       }
       return t = c, (n = [{
         key: "handleZoomInClick",
@@ -179,7 +178,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
       }]) && E(t.prototype, n), c;
     }(a.Component);
-    P.defaultProps = {
+    k.defaultProps = {
       displayDivider: !0,
       showZoomControls: !1,
       t: function t(e) {
@@ -189,10 +188,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       viewer: {},
       windowId: ""
     };
-    var I = {
+    var P = {
       updateViewport: y.WH
     };
-    var x = (0, r.qC)((0, h.Z)(), (0, u.Z)(function (e) {
+    var I = (0, r.qC)((0, h.Z)(), (0, u.Z)(function (e) {
       return {
         divider: {
           borderRight: "1px solid #808080",
@@ -218,36 +217,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           windowId: n
         })
       };
-    }, I), (0, o.A)("ZoomControls"))(P);
-    var R = n(81720);
-    function N(e, t) {
-      if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-    }
-    function z(e, t) {
+    }, P), (0, o.A)("ZoomControls"))(k);
+    var x = n(81720);
+    function R(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
       }
     }
-    function S(e, t) {
-      return (S = Object.setPrototypeOf || function (e, t) {
+    function N(e, t) {
+      return N = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, N(e, t);
     }
-    function T(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return function (e) {
-        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return e;
-      }(e);
-    }
-    function D(e) {
-      return (D = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function z(e) {
+      return z = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, z(e);
     }
-    var B = function (e) {
+    var S = function (e) {
       !function (e, t) {
         if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
         e.prototype = Object.create(t && t.prototype, {
@@ -256,7 +244,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             writable: !0,
             configurable: !0
           }
-        }), t && S(e, t);
+        }), t && N(e, t);
       }(c, e);
       var t,
         n,
@@ -273,15 +261,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var e,
-            t = D(r);
+            t = z(r);
           if (o) {
-            var n = D(this).constructor;
+            var n = z(this).constructor;
             e = Reflect.construct(t, arguments, n);
           } else e = t.apply(this, arguments);
-          return T(this, e);
+          return function (e, t) {
+            if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+            return function (e) {
+              if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+              return e;
+            }(e);
+          }(this, e);
         });
       function c() {
-        return N(this, c), i.apply(this, arguments);
+        return function (e, t) {
+          if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+        }(this, c), i.apply(this, arguments);
       }
       return t = c, (n = [{
         key: "render",
@@ -293,29 +290,29 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             o = e.classes,
             i = e.t;
           return a.createElement("div", {
-            className: p()((0, R.Z)("osd-info"), o.osdInfo)
+            className: p()((0, x.Z)("osd-info"), o.osdInfo)
           }, a.createElement(v.Z, {
             display: "inline",
             variant: "caption",
-            className: (0, R.Z)("canvas-count")
+            className: (0, x.Z)("canvas-count")
           }, i("pagination", {
             current: n + 1,
             total: t
           })), a.createElement(v.Z, {
             display: "inline",
             variant: "caption",
-            className: (0, R.Z)("canvas-label")
+            className: (0, x.Z)("canvas-label")
           }, r && " • ".concat(r)));
         }
-      }]) && z(t.prototype, n), c;
+      }]) && R(t.prototype, n), c;
     }(a.Component);
-    B.defaultProps = {
+    S.defaultProps = {
       canvasLabel: void 0,
       t: function t() {}
     };
-    var A = n(49455),
-      V = n(95981);
-    var M = (0, r.qC)((0, u.Z)({
+    var T = n(49455),
+      D = n(95981);
+    var B = (0, r.qC)((0, u.Z)({
       osdInfo: {
         order: 2,
         overflow: "hidden",
@@ -327,53 +324,42 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     }), (0, h.Z)(), (0, i.$j)(function (e, t) {
       var n = t.windowId,
-        r = (0, A.LU)(e, {
+        r = (0, T.LU)(e, {
           windowId: n
         }),
-        o = (0, V.Dr)(e, {
+        o = (0, D.Dr)(e, {
           windowId: n
         }),
-        a = ((0, A.Pm)(e, {
+        a = ((0, T.Pm)(e, {
           windowId: n
         }) || {}).id;
       return {
         canvasCount: r.length,
         canvasIndex: o,
-        canvasLabel: (0, A.vt)(e, {
+        canvasLabel: (0, T.vt)(e, {
           canvasId: a,
           windowId: n
         })
       };
-    }, null), (0, o.A)("ViewerInfo"))(B);
-    var W = n(99049);
-    function q(e, t) {
-      if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-    }
-    function H(e, t) {
+    }, null), (0, o.A)("ViewerInfo"))(S);
+    var A = n(99049);
+    function V(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
       }
     }
-    function L(e, t) {
-      return (L = Object.setPrototypeOf || function (e, t) {
+    function M(e, t) {
+      return M = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, M(e, t);
     }
-    function $(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return function (e) {
-        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return e;
-      }(e);
-    }
-    function F(e) {
-      return (F = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function W(e) {
+      return W = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, W(e);
     }
-    var U = function (e) {
+    var q = function (e) {
       !function (e, t) {
         if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
         e.prototype = Object.create(t && t.prototype, {
@@ -382,7 +368,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             writable: !0,
             configurable: !0
           }
-        }), t && L(e, t);
+        }), t && M(e, t);
       }(c, e);
       var t,
         n,
@@ -399,15 +385,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var e,
-            t = F(r);
+            t = W(r);
           if (o) {
-            var n = F(this).constructor;
+            var n = W(this).constructor;
             e = Reflect.construct(t, arguments, n);
           } else e = t.apply(this, arguments);
-          return $(this, e);
+          return function (e, t) {
+            if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+            return function (e) {
+              if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+              return e;
+            }(e);
+          }(this, e);
         });
       function c() {
-        return q(this, c), i.apply(this, arguments);
+        return function (e, t) {
+          if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+        }(this, c), i.apply(this, arguments);
       }
       return t = c, (n = [{
         key: "render",
@@ -448,51 +443,51 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               }, s = {};
           }
           return a.createElement("div", {
-            className: p()((0, R.Z)("osd-navigation"), c.osdNavigation),
+            className: p()((0, x.Z)("osd-navigation"), c.osdNavigation),
             dir: u
           }, a.createElement(g.Z, {
             "aria-label": i("previousCanvas"),
-            className: (0, R.Z)("previous-canvas-button"),
+            className: (0, x.Z)("previous-canvas-button"),
             disabled: !n,
             onClick: function onClick() {
               n && o();
             }
-          }, a.createElement(W.Z, {
+          }, a.createElement(A.Z, {
             style: l
           })), a.createElement(g.Z, {
             "aria-label": i("nextCanvas"),
-            className: (0, R.Z)("next-canvas-button"),
+            className: (0, x.Z)("next-canvas-button"),
             disabled: !t,
             onClick: function onClick() {
               t && r();
             }
-          }, a.createElement(W.Z, {
+          }, a.createElement(A.Z, {
             style: s
           })));
         }
-      }]) && H(t.prototype, n), c;
+      }]) && V(t.prototype, n), c;
     }(a.Component);
-    U.defaultProps = {
+    q.defaultProps = {
       hasNextCanvas: !1,
       hasPreviousCanvas: !1,
       setNextCanvas: function setNextCanvas() {},
       setPreviousCanvas: function setPreviousCanvas() {},
       viewingDirection: ""
     };
-    var Q = (0, r.qC)((0, u.Z)({
+    var H = (0, r.qC)((0, u.Z)({
       osdNavigation: {
         order: 1
       }
     }), (0, h.Z)(), (0, i.$j)(function (e, t) {
       var n = t.windowId;
       return {
-        hasNextCanvas: !!(0, A.m7)(e, {
+        hasNextCanvas: !!(0, T.m7)(e, {
           windowId: n
         }),
-        hasPreviousCanvas: !!(0, A.iQ)(e, {
+        hasPreviousCanvas: !!(0, T.iQ)(e, {
           windowId: n
         }),
-        viewingDirection: (0, V.Xf)(e, {
+        viewingDirection: (0, D.Xf)(e, {
           windowId: n
         })
       };
@@ -506,36 +501,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           return e(y.Ch(n));
         }
       };
-    }), (0, o.A)("ViewerNavigation"))(U);
-    var X = n(95450);
-    function G(e, t) {
-      if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-    }
-    function J(e, t) {
+    }), (0, o.A)("ViewerNavigation"))(q);
+    var L = n(95450);
+    function $(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
       }
     }
-    function K(e, t) {
-      return (K = Object.setPrototypeOf || function (e, t) {
+    function F(e, t) {
+      return F = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, F(e, t);
     }
-    function Y(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return function (e) {
-        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return e;
-      }(e);
-    }
-    function ee(e) {
-      return (ee = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function U(e) {
+      return U = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, U(e);
     }
-    var te = function (e) {
+    var Q = function (e) {
       !function (e, t) {
         if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
         e.prototype = Object.create(t && t.prototype, {
@@ -544,7 +528,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             writable: !0,
             configurable: !0
           }
-        }), t && K(e, t);
+        }), t && F(e, t);
       }(c, e);
       var t,
         n,
@@ -561,15 +545,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           }
         }(), function () {
           var e,
-            t = ee(r);
+            t = U(r);
           if (o) {
-            var n = ee(this).constructor;
+            var n = U(this).constructor;
             e = Reflect.construct(t, arguments, n);
           } else e = t.apply(this, arguments);
-          return Y(this, e);
+          return function (e, t) {
+            if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+            return function (e) {
+              if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+              return e;
+            }(e);
+          }(this, e);
         });
       function c() {
-        return G(this, c), i.apply(this, arguments);
+        return function (e, t) {
+          if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+        }(this, c), i.apply(this, arguments);
       }
       return t = c, (n = [{
         key: "canvasNavControlsAreStacked",
@@ -587,30 +580,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             o = e.zoomToWorld;
           return n ? a.createElement(d.Z, {
             square: !0,
-            className: p()(t.controls, (0, R.Z)("canvas-nav"), t.canvasNav, this.canvasNavControlsAreStacked() ? (0, R.Z)("canvas-nav-stacked") : null, this.canvasNavControlsAreStacked() ? t.canvasNavStacked : null),
+            className: p()(t.controls, (0, x.Z)("canvas-nav"), t.canvasNav, this.canvasNavControlsAreStacked() ? (0, x.Z)("canvas-nav-stacked") : null, this.canvasNavControlsAreStacked() ? t.canvasNavStacked : null),
             elevation: 0
-          }, a.createElement(x, {
+          }, a.createElement(I, {
             displayDivider: !this.canvasNavControlsAreStacked(),
             windowId: r,
             zoomToWorld: o
-          }), a.createElement(Q, {
+          }), a.createElement(H, {
             windowId: r
-          }), a.createElement(M, {
+          }), a.createElement(B, {
             windowId: r
-          }), a.createElement(X.M, this.props)) : a.createElement(v.Z, {
+          }), a.createElement(L.M, this.props)) : a.createElement(v.Z, {
             variant: "srOnly",
             component: "div"
-          }, a.createElement(M, {
+          }, a.createElement(B, {
             windowId: r
           }));
         }
-      }]) && J(t.prototype, n), c;
+      }]) && $(t.prototype, n), c;
     }(a.Component);
-    te.defaultProps = {
+    Q.defaultProps = {
       classes: {},
       visible: !0
     };
-    var ne = (0, r.qC)((0, i.$j)(function (e, t) {
+    var X = (0, r.qC)((0, i.$j)(function (e, t) {
       var n = t.windowId;
       return {
         visible: (0, s.oq)(e).focusedWindowId === n
@@ -635,35 +628,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           zIndex: 50
         }
       };
-    }), (0, c.withSize)(), (0, o.A)("WindowCanvasNavigationControls"))(te);
-    function re(e, t) {
+    }), (0, c.withSize)(), (0, o.A)("WindowCanvasNavigationControls"))(Q);
+    function G(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
       }
     }
-    function oe(e, t) {
-      return (oe = Object.setPrototypeOf || function (e, t) {
+    function J(e, t) {
+      return J = Object.setPrototypeOf || function (e, t) {
         return e.__proto__ = t, e;
-      })(e, t);
+      }, J(e, t);
     }
-    function ae(e, t) {
-      if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
-      if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-      return function (e) {
-        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return e;
-      }(e);
-    }
-    function ie(e) {
-      return (ie = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
+    function K(e) {
+      return K = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
         return e.__proto__ || Object.getPrototypeOf(e);
-      })(e);
+      }, K(e);
     }
-    var ce = (0, a.lazy)(function () {
+    var Y = (0, a.lazy)(function () {
         return n.e(501).then(n.bind(n, 26501));
       }),
-      ue = function (e) {
+      ee = function (e) {
         !function (e, t) {
           if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
           e.prototype = Object.create(t && t.prototype, {
@@ -672,7 +657,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               writable: !0,
               configurable: !0
             }
-          }), t && oe(e, t);
+          }), t && J(e, t);
         }(u, e);
         var t,
           n,
@@ -690,12 +675,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             }
           }(), function () {
             var e,
-              t = ie(o);
+              t = K(o);
             if (i) {
-              var n = ie(this).constructor;
+              var n = K(this).constructor;
               e = Reflect.construct(t, arguments, n);
             } else e = t.apply(this, arguments);
-            return ae(this, e);
+            return function (e, t) {
+              if (t && ("object" == _typeof(t) || "function" == typeof t)) return t;
+              if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+              return function (e) {
+                if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                return e;
+              }(e);
+            }(this, e);
           });
         function u(e) {
           var t;
@@ -716,14 +708,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             var e = this.props.windowId;
             return this.state.hasError ? a.createElement(a.Fragment, null) : a.createElement(a.Suspense, {
               fallback: a.createElement("div", null)
-            }, a.createElement(ce, {
+            }, a.createElement(Y, {
               windowId: e
-            }, a.createElement(ne, {
+            }, a.createElement(X, {
               windowId: e
             })));
           }
-        }]) && re(t.prototype, n), r && re(t, r), u;
+        }]) && G(t.prototype, n), r && G(t, r), u;
       }(a.Component);
-    var le = (0, r.qC)((0, o.A)("WindowViewer"))(ue);
+    var te = (0, r.qC)((0, o.A)("WindowViewer"))(ee);
   }
 }]);

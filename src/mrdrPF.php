@@ -10,6 +10,9 @@ use MediaWiki\Revision\RevisionRecord;
 
 class mrdrPF {
 
+  /**
+   * Runs #mirador parser function and initialises js module
+   */
   public static function runMiradorPF ( $parser, $frame, $params ) {
     $paramManifestURL = ''; //default
     $paramCanvasID = null;
@@ -19,11 +22,11 @@ class mrdrPF {
     $paramImageToolsOpen = false;
     $paramImageToolsEnabled = false;
     $paramCanvasLinkEnabled = false;
-    $paramPageUrl = 'undefined';
+    $paramPageUrl = '';
     if ( $params == null || $params == 'undefined' ) {
       return false;
     }
-    $parser->getOutput()->addModules( [ 'ext.mirador.core' ] );
+
     foreach ( $params as $i => $param ) {
       $paramExpanded = $frame->expand($param);
       $keyValPair = explode( '=', $paramExpanded, 2 );
@@ -49,9 +52,13 @@ class mrdrPF {
         case 'pageurl': $paramPageUrl = $value;
         break;
       }
-    }//foreach
+    } //foreach
+
+    $parser->getOutput()->addModules( [ 'ext.mirador.core' ] );
+
     $str = "<div id='miradorframe' class='miradorframe' data-manifest-url='{$paramManifestURL}' data-canvasid='{$paramCanvasID}' data-theme='{$paramTheme}' data-workspace-type='{$paramWorkspaceType}' data-thumbnav-position='{$paramThumbNavPosition}' data-imagetools-open='{$paramImageToolsOpen}' data-canvaslink-enabled='{$paramCanvasLinkEnabled}' data-page-url='{$paramPageUrl}'></div>";
+
     return $str;
-  }//f
+  } //runMiradorPF
 
 }
