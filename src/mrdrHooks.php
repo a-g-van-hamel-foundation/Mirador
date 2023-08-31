@@ -17,6 +17,9 @@ class mrdrHooks {
     $functionCallback = [ 'mrdrPF', 'runMiradorPF' ];
     $flags = Parser::SFH_OBJECT_ARGS;
     $parser->setFunctionHook( $name, $functionCallback, $flags );
+
+    $parser->setFunctionHook( 'mirador-change-canvas', [ 'mrdrPF', 'runCanvasBtn' ], $flags );
+
     return true;
 
   }

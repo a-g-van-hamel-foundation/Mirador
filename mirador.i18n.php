@@ -11,5 +11,6 @@ $magicWords = [];
  */
 
 $magicWords['en'] = [
-   'mirador' => [ 0, 'mirador' ]
+   'mirador' => [ 0, 'mirador' ],
+   'mirador-change-canvas' => [ 0, 'mirador-change-canvas' ]
 ];
