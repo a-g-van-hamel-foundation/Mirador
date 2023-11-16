@@ -6,5 +6,15 @@
   },
   "mirador-extensionname": "Mirador",
   "mirador": "Mirador",
-  "mirador-desc": "Implements Mirador 3, a multi-window image viewing platform based largely on IIIF, with the ability to zoom, display, compare and annotate images from around the world."
+  "mirador-desc": "Implements Mirador 3, a multi-window image viewing platform based largely on IIIF, with the ability to zoom, display, compare and annotate images from around the world.",
+  "mirador-github-url": "https://github.com/a-g-van-hamel-foundation/Mirador",
+  "mirador-lab-url": "https://codecs.vanhamel.nl/Show:Lab/Mirador",
+  "mirador-lib-url": "https://github.com/ProjectMirador/mirador",
+  "mirador-lib-version": "3.3.0",
+  "mirador-plugin-annotations": "[https://github.com/ProjectMirador/mirador-annotations Annotations] (Project Mirador)",
+  "mirador-plugin-canvaslink": "[https://github.com/dbmdz/mirador-canvaslink CanvasLink] (MDZ)",
+  "mirador-plugin-imagecropper": "[https://github.com/dbmdz/mirador-imagecropper ImageCropper] (MDZ)",
+  "mirador-plugin-imagetools": "[https://github.com/ProjectMirador/mirador-image-tools ImageTools] (Project Mirador)",
+  "mirador-plugin-textoverlay": "[https://github.com/dbmdz/mirador-textoverlay Textoverlay] (MDZ)"
+  
 }

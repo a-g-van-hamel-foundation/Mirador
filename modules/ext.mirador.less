@@ -17,3 +17,42 @@
 #codecs-mirador-frame #miradorframe {
   height: ~"calc(100vh - 64px)";
 }
+
+.mirador-specialpage-header .mirador-item {
+  margin-bottom: 1em;
+  display: flex;
+  width: 100%;
+  @media (max-width: 670px) {
+    flex-wrap:wrap;
+  }
+  .label {
+    font-weight:bold;
+    display: block;
+    min-width: 10rem;
+    text-align: left;
+    font-size:1rem;
+    padding:0 .2rem 0 0;
+    line-height: inherit;
+  }
+  .description {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size:1rem;
+    line-height: inherit;
+  }
+}
+.mirador-specialpage-result {
+  width: 100%;
+  .title-link {
+    display:block;
+  }
+  .details {
+    font-size: smaller;
+    display:flex;
+    font-style:italic;
+    & > * {
+      margin-right:.4rem;
+    }
+  }
+}
