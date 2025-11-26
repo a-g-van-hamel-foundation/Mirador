@@ -1,7 +1,7 @@
 /**
- * 
- * Referene: https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js 
+ * @link https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js 
  */
+
 $(document).ready(function() {
 
 const instanceId = 'miradorframe';
@@ -10,9 +10,11 @@ const urlParams = new URLSearchParams(location.search);
 const valueSep = ( targetEl.hasAttribute('data-valuesep') ) ? targetEl.getAttribute('data-valuesep') : "^^";
 
 // Identifiers. Manifest from URL takes precedence over URL from parser function
-const manifestFromUrl = urlParams.get('manifest');
+const manifestFromUrl = urlParams.get('manifest') ?? null;
 	// decodeURIComponent ?
-const manifestFromSource = ( targetEl.hasAttribute('data-manifest-url') ) ? targetEl.getAttribute('data-manifest-url') : "https://www.loc.gov/item/2004553940/manifest.json";
+const manifestFromSource = ( targetEl.hasAttribute('data-manifest-url') )
+	? targetEl.getAttribute('data-manifest-url')
+	: "https://www.loc.gov/item/2004553940/manifest.json";
 const iiifManifestUrl = ( manifestFromUrl !== undefined && manifestFromUrl !== null && manifestFromUrl !== '' )
 		? manifestFromUrl.replaceAll(' ', '_')
 		: manifestFromSource;
@@ -38,7 +40,7 @@ const allowWindowsClose = ( targetEl.getAttribute('data-windows-allow-close') ==
 const allowWindowsFullscreen = ( targetEl.getAttribute('data-windows-allow-fullscreen') == 'false' ) ? false : true;
 const allowTopMenuButton = ( targetEl.getAttribute('data-allow-top-menu-button') == 'false' ) ? false : true;
 const highlightAllAnnotations = ( targetEl.getAttribute('data-highlight-all-annotations') == 'true' ) ? true : false;
-const hideWindowTitle = ( targetEl.getAttribute('data-hide-window-title') == 'true' ) ? true : false;
+const hideWindowTitle = targetEl.getAttribute('data-hide-window-title') == "true";
 
 // console.log( `selectedTheme: ${selectedTheme} / mainColor : ${mainColor} / workspaceType: ${workspaceType} / allowWindowsClose: ${allowWindowsClose} / allowWindowsFullscreen: ${allowWindowsFullscreen} / allowTopMenuButton: ${allowTopMenuButton} / highlightAllAnnotations: ${highlightAllAnnotations} / hideWindowTitle: ${hideWindowTitle} ` );
 
@@ -89,10 +91,10 @@ var filterManifestItems = function( url, action ) {
 		return;
 	}
 
-	var apiVersion = getApiVersionFromAction( action );
-	if ( apiVersion == '2' || apiVersion == '1' ) {
+	var apiVersion = getApiVersionFromManifest( action["manifestJson"] );
+	if (apiVersion === 2 || apiVersion === 1) {
 		var canvases = action['manifestJson']['sequences'][0]['canvases'];			
-	} else if ( apiVersion == '3') {
+	} else if (apiVersion === 3) {
 		var canvases = action['manifestJson']['items'];
 	}
 
@@ -103,9 +105,9 @@ var filterManifestItems = function( url, action ) {
 		//const pagesArr = pageLabels.split(',').map( (page) => new Number(page) );
 	}
 
-	if ( apiVersion == '2' || apiVersion == '1' ) {
+	if (apiVersion === 2 || apiVersion === 1) {
 		action['manifestJson']['sequences'][0]['canvases'] = selectCanvases;
-	} else if ( apiVersion == '3') {
+	} else if ( apiVersion === 3) {
 		action['manifestJson']['items'] = selectCanvases;
 	}
 
@@ -115,13 +117,13 @@ function setCanvasesBy() {
 
 }
 
-function getApiVersionFromAction( action ) {
-	if ( action['manifestJson']['@context'] == 'http://iiif.io/api/presentation/3/context.json' ) {
-		return '3'; 
-	} else if ( action['manifestJson']['@context'] == 'http://iiif.io/api/presentation/2/context.json' ) {
-		return '2';
+function getApiVersionFromManifest( manifest ) {
+	if ( manifest['@context'] == 'http://iiif.io/api/presentation/3/context.json' ) {
+		return 3;
+	} else if ( manifest['@context'] == 'http://iiif.io/api/presentation/2/context.json' ) {
+		return 2;
 	} else {
-		return '1';
+		return 1;
 	}
 }
 
@@ -147,10 +149,17 @@ if ( annotationsEnabled == true ) {
 		// Should be a dynamic function
 		var canvasIds = [];
 		$.getJSON( iiifManifestUrl, function( data ) {
-			var canvases = data.sequences[0].canvases;
-			canvases.forEach( function (canvas) {
-				canvasIds.push( canvas['@id'] );
-			});
+			var apiVersion = getApiVersionFromManifest( data );
+			if (apiVersion === 2) {
+				var canvases = data.sequences[0].canvases;
+				canvases.forEach( function (canvas) {
+					canvasIds.push( canvas['@id'] );
+				});
+			} else if (apiVersion === 3) {
+				data.items.forEach( function (canvas) {
+					canvasIds.push( canvas['id'] );
+				});
+			}
 			var annotArr = LocalStorageUtil.initFetchAnnotations( canvasIds );
 		});
 	} );
@@ -197,42 +206,46 @@ for (var i = 0; i < manifestArr.length; i++) {
 /* Config for Mirador */
 const config = {
 	id: 'miradorframe',
+	annotations: {
+		htmlSanitizationRuleSet: 'iiif', // See src/lib/htmlRules.js for acceptable values
+		filteredMotivations: ['oa:commenting', 'oa:tagging', 'sc:painting', 'commenting', 'tagging', 'describing', 'highlighting']
+	},
 	window: {
-			defaultView: windowsDefaultView,
-			allowFullscreen: allowWindowsFullscreen, // WindowTopBar only
-			allowClose: allowWindowsClose,
-			sideBarOpenByDefault: false,
-			highlightAllAnnotations: highlightAllAnnotations,
-			hideWindowTitle: hideWindowTitle,
-			allowTopMenuButton: allowTopMenuButton,
-			//defaultSideBarPanel: 'annotations',
-			views: [
+		defaultView: windowsDefaultView,
+		allowFullscreen: allowWindowsFullscreen, // WindowTopBar only
+		allowClose: allowWindowsClose,
+		sideBarOpenByDefault: false,
+		highlightAllAnnotations: highlightAllAnnotations,
+		hideWindowTitle: hideWindowTitle,
+		allowTopMenuButton: allowTopMenuButton,
+		//defaultSideBarPanel: 'annotations',
+		views: [
 				{ key: 'single', behaviors: ['individuals', 'paged'] },
 				{ key: 'book', behaviors: ['paged'] },
 				{ key: 'scroll', behaviors: ['continuous'] },
 				{ key: 'gallery' }
-			],				
-			imageToolsEnabled: imageToolsEnabled,
-			imageToolsOpen: imageToolsOpen,
-			canvasLink: {
-				active: true,
-				enabled: canvasLinkEnabled,
-				singleCanvasOnly: false,
-				getCanvasLink: (manifestId, canvases) => {
-					const objectId = manifestId;
-					//const objectId = manifestId.split("/").slice(-2)[0];
-					const canvasIds = canvases.map(
-						(canvas) => canvas.id
-					);
-					//const canvasIndices = canvases.map(
-					//  (canvas) => canvas.id.split("/").slice(-1)[0]
-					//);
-					const canvasIdsJoined = canvasIds.join( "," );
-					const pageSearchParams = `&manifest=${objectId}&canvas=${canvasIdsJoined}`;
-					return pageUrl + pageSearchParams;
-				},
+		],				
+		imageToolsEnabled: imageToolsEnabled,
+		imageToolsOpen: imageToolsOpen,
+		canvasLink: {
+			active: true,
+			enabled: canvasLinkEnabled,
+			singleCanvasOnly: false,
+			getCanvasLink: (manifestId, canvases) => {
+				const objectId = manifestId;
+				//const objectId = manifestId.split("/").slice(-2)[0];
+				const canvasIds = canvases.map(
+					(canvas) => canvas.id
+				);
+				//const canvasIndices = canvases.map(
+				//  (canvas) => canvas.id.split("/").slice(-1)[0]
+				//);
+				const canvasIdsJoined = canvasIds.join( "," );
+				const pageSearchParams = `&manifest=${objectId}&canvas=${canvasIdsJoined}`;
+				return pageUrl + pageSearchParams;
 			},
-		},
+		}
+	},
 	windows: 
 		windowsArr,
 		selectedTheme: selectedTheme,
@@ -315,11 +328,11 @@ function setButtonToChangeCanvas( miradorInstance, btn ) {
 				// Access values before dispatch destroys viewers
 				var state = miradorInstance.store.getState();
 				if ( state['viewers'][canvasWindowId] == null ) {
-							var rotation = 0;
-							var flip = false;
+					var rotation = 0;
+					var flip = false;
 				} else {
-							var rotation = state['viewers'][canvasWindowId]['rotation'];
-							var flip = state['viewers'][canvasWindowId]['flip'];
+					var rotation = state['viewers'][canvasWindowId]['rotation'];
+					var flip = state['viewers'][canvasWindowId]['flip'];
 				}
 
 				// Best to use single view for these kinds of actions
@@ -453,7 +466,7 @@ function showCurrentCanvasID( miradorInstance, canvasWindowId ) {
  */
 function filterCanvasesByCanvasId( canvases, canvasIds, apiVersion ) {
 	var newCanvases = [];
-	var idAttr = ( apiVersion == '3' ) ? 'id' : '@id';
+	var idAttr = ( apiVersion === 3 ) ? 'id' : '@id';
 	canvasIds.map( (canvasid) => canvases.forEach( el => {
 			//console.log( el['label'] );
 			if ( el[idAttr] == canvasid ) {
@@ -493,13 +506,20 @@ function getAnnotationsFromStorage( iiifManifestUrl, print = true, clearStorage 
 	mw.loader.using( [ 'ext.localstorage' ], function ( require ) {	
 		var LocalStorageUtil = require( 'ext.localstorage' );
 		// Should be a dynamic function
-		// 
+ 
 		var canvasIds = [];
 		$.getJSON( iiifManifestUrl, function( data ) {
-			var canvases = data.sequences[0].canvases;
-			canvases.forEach( function (canvas) {
-				canvasIds.push( canvas['@id'] );
-			});
+			var apiVersion = getApiVersionFromManifest( data );
+			if (apiVersion === 2) {
+				var canvases = data.sequences[0].canvases;
+				canvases.forEach( function (canvas) {
+					canvasIds.push( canvas['@id'] );
+				});
+			} else if (apiVersion === 3) {
+				data.items.forEach( function (canvas) {
+					canvasIds.push( canvas['id'] );
+				});
+			}
 			var annotArr = LocalStorageUtil.initFetchAnnotations( canvasIds );
 			//console.log( annotArr );
 

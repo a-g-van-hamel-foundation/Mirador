@@ -1,6 +1,6 @@
 {
 	"name": "Mirador",
-	"version": "0.4",
+	"version": "0.5",
 	"type": "parserhook",
 	"author": [
     	"[https://projectmirador.org Creators of Mirador]",
@@ -20,7 +20,8 @@
 	    ]
 	},
 	"ExtensionMessagesFiles": {
-		"mrdrMagic": "mirador.i18n.php"
+		"mrdrMagic": "mirador.i18n.php",
+		"mrdrAliases": "mirador.i18n.aliases.php"
 	},
 	"AutoloadNamespaces": {
       "mrdr\\": "src/",

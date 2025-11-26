@@ -58,12 +58,18 @@ const LocalStorageUtil = {
 	 */
 	getCanvasIds: function ( manifest, version = 2 ) {
 		var canvasIds = [];
+		console.log( "version", version );
 		$.getJSON( manifest, function( data ) {
-			//console.log( data );
-			var canvases = data.sequences[0].canvases;
-			canvases.forEach( function (canvas) {
-				canvasIds.push( canvas['@id'] );
-			});
+			if ( version == 2 ) {
+				var canvases = data.sequences[0].canvases;
+				canvases.forEach( function (canvas) {
+					canvasIds.push( canvas['@id'] );
+				});
+			} else if( version == 3 ) {
+				data.items.forEach( function (canvas) {
+					canvasIds.push( canvas['id'] );
+				});
+			}
 		});
 		return canvasIds;
 	},

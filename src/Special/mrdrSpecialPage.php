@@ -35,12 +35,12 @@ class mrdrSpecialPage extends \SpecialPage {
 
 	}
 
-    private function buildPageHeader( ) {
-        $res = $headerItems = '';
+	private function buildPageHeader( ) {
+		$res = $headerItems = '';
 		$extJsonStr = self::fetchExtensionJson();
-        if ( $extJsonStr == false ) {
-            return $res;
-        }
+		if ( $extJsonStr == false ) {
+			return $res;
+		}
 
 		$extDescription = $extJsonStr['description'];
 		$headerItems .= "<div class='mirador-item'><strong class='label'>Description</strong><div class='description'>{$extDescription}</div></div>";
@@ -73,11 +73,11 @@ class mrdrSpecialPage extends \SpecialPage {
 		$pluginTextOverlay = $this->msg( 'mirador-plugin-textoverlay' )->text();
 		$headerItems .= "<div class='mirador-item'><strong class='label'>Mirador plugins</strong><div class='description'>{$pluginAnnot}, {$pluginImageTools}, {$pluginImageCropper}, {$pluginCanvasLink}, {$pluginTextOverlay}</div></div>";
 
-        $res .= "<div class='mirador-specialpage-header'>{$headerItems}</div>";
+		$res .= "<div class='mirador-specialpage-header'>{$headerItems}</div>";
 		return $res;
-    }
+	}
 
-    private static function fetchExtensionJson() {
+	private static function fetchExtensionJson() {
 		global $IP;
 		$jsonSource = "$IP/extensions/Mirador/extension.json";
 		if ( file_exists( $jsonSource ) ) {

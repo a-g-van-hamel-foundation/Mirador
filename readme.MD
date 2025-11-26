@@ -81,6 +81,7 @@ Use the parser function `#mirador-change-canvas` if you want to add a button tha
 - `class` = button class
 
 ## Version history
+- 0.5 - Added 'describing' and 'highlighting' to list of `filteredMotivations` for annotations so they will show up in the viewer. Added support for Annotations with Presentation API v3. Added special page aliases.
 - 0.4 - Added [Annotations plugin](https://github.com/ProjectMirador/mirador-annotations), with convenience features for working with localStorage (mirador-annot parser function). Added further configuration options and changed some defaults. Added restricttocanvasids. Introduced valuesep parameter (default: `^^`). Added basic info to special page and made it accessible through AdminLinks extension.
 - 0.3 - Moved custom code out of Webpack. Added new params (windowsmaximized, restricttolabels, catalogurls). Added support for multiple manifests. Added parser function (mirador-change-canvas) for jumping to a new canvas and added js to let you fetch the current canvas ID.
 - 0.2 - Upgraded build. Added check for both loading and DOMContentLoad events to address occasional TypeError issue (e.g. `rc is not defined`). Fixed issue with spaces in URLs.
