@@ -4,6 +4,22 @@
 
 $(document).ready(function() {
 
+/**
+ * Checks if the screen is of mobile width
+ * (Not a responsive check)
+ * @returns bool
+ */
+function hasMobileWidth() {
+	const minWidth = 768; // Minimum width for desktop devices
+	if ( screen.width != undefined && screen.width < minWidth ) {
+		return true;
+	} else if( document.documentElement.clientWidth != undefined && document.documentElement.clientWidth < minWidth ) {
+		// window.innerWidth undefined here
+		return true;
+	}
+	return false;
+}
+
 const instanceId = 'miradorframe';
 const targetEl = document.getElementById( instanceId );
 const urlParams = new URLSearchParams(location.search);
@@ -33,7 +49,11 @@ const canvasId = ( canvasIdsFromUrl[0] !== undefined && canvasIdsFromUrl[0] !== 
 const selectedTheme = targetEl.getAttribute('data-theme');
 const mainColor = targetEl.getAttribute('data-main-color');
 const workspaceType = targetEl.getAttribute('data-workspace-type');
-const thumbNavPosition = targetEl.getAttribute('data-thumbnav-position');
+const thumbNavPositionRaw = targetEl.getAttribute('data-thumbnav-position');
+const thumbNavPosition = thumbNavPositionRaw == "automated"
+	? ( hasMobileWidth() ? "far-bottom" : "far-right" )
+	: thumbNavPositionRaw;
+
 const windowsMaximized = ( targetEl.getAttribute('data-windows-maximized') == 'true' ) ? true : false;
 const windowsDefaultView = targetEl.getAttribute('data-windows-defaultview');
 const allowWindowsClose = ( targetEl.getAttribute('data-windows-allow-close') == 'false' ) ? false : true;

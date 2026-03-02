@@ -30,7 +30,7 @@ The parser function offers a select set of configuration options:
 |defaultview=single (default), book or gallery
 |workspacetype=mosaic (default) or elastic
 |windowsmaximized=true (default) or false. Whether or not canvas windows should appear in their maximized mode of presentation.
-|thumbnavposition=off (default), far-bottom or far-right. Represents the position of thumbnail navigation.
+|thumbnavposition=off (default), far-bottom, far-right or automated. Represents the position of thumbnail navigation. If you choose 'automated', the navigation will be found at the bottom if screen width is below 768 (mobile) or else to the right of the canvas.
 |allowwindowclose=true (default), false. Whether the user should be allowed to close the canvas window.
 |allowwindowfullscreen=true (default), false. Whether the top panel should include an option to launch full-screen mode.
 |hidewindowtitle=true, false (default)
