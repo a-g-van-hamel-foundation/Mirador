@@ -8,7 +8,9 @@
  */
 namespace mrdr\Special;
 
-class mrdrSpecialPage extends \SpecialPage {
+use MediaWiki\SpecialPage\SpecialPage;
+
+class mrdrSpecialPage extends SpecialPage {
 
 	public function __construct( $name = 'Mirador' ) {
 		parent::__construct( $name );
@@ -23,16 +25,15 @@ class mrdrSpecialPage extends \SpecialPage {
 	}
 
 	public function execute( $subPage ) {
-		$out = \RequestContext::getMain()->getOutput();
+		$out = $this->getOutput();
 		$res = '';
 		$this->setHeaders();
 
-		$this->getOutput()->addModuleStyles( [ 'ext.mirador.special' ] );
+		$out->addModuleStyles( [ 'ext.mirador.special' ] );
 		$pageHeader = self::buildPageHeader();
 
 		$res = $pageHeader;
 		$out->addWikiTextAsContent( $res );
-
 	}
 
 	private function buildPageHeader( ) {
